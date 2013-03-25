@@ -38,6 +38,9 @@ This will be expanded soon.
 
 == Changelog ==
 
+= 0.1.1 =
+* Changed the plugin URI
+
 = 0.1.0 =
 * Widget is made.
 
