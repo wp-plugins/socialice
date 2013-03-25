@@ -37,6 +37,9 @@ This will be expanded soon.
 2. 
 
 == Changelog ==
+= 0.1.1 =
+* Changed map structure.
+
 = 0.1.0 =
 * Widget is made.
 
