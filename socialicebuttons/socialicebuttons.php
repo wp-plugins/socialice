@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Socialice
-Plugin URI: http://www.noveres.nl
+Plugin URI: http://www.noveres.nl/socialice-0-1-0/
 Description: A beta-version of nicely designed social buttons.
 Author: Noveres
 Version: 0.1.0
