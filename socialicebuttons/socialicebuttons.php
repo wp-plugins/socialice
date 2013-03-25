@@ -4,7 +4,7 @@ Plugin Name: Socialice
 Plugin URI: http://www.noveres.nl/socialice-0-1-0/
 Description: A beta-version of nicely designed social buttons.
 Author: Noveres
-Version: 0.1.1
+Version: 0.1.0
 Author URI: http://www.noveres.nl
 License: GPL3
 */
