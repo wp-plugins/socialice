@@ -24,7 +24,7 @@ License: GPL3
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-
+ 
 function socialice_install() {
     add_option( 'socialice_facebook', '', '', 'yes' );
     add_option( 'socialice_twitter', '', '', 'yes' );
