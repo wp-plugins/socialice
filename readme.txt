@@ -4,7 +4,7 @@ Donate link: http://www.noveres.nl
 Tags: social, socialmedia, socialmedia buttons
 Requires at least: 3.0.1
 Tested up to: 3.5.1
-Stable tag: 
+Stable tag: 0.2.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
