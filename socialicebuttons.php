@@ -1,10 +1,10 @@
 <?php
 /*
 Plugin Name: Socialice
-Plugin URI: http://www.noveres.nl/socialice-0-1-0/
-Description: A beta-version of nicely designed social buttons.
+Plugin URI: http://www.noveres.nl/category/wordpress/socialice/
+Description: Socialbuttons that link to your pages on Facebook, Twitter and Google+.
 Author: Noveres
-Version: 0.1.1
+Version: 0.2.0
 Author URI: http://www.noveres.nl
 License: GPL3
 */
@@ -105,33 +105,36 @@ function socialice_options() {
     }
 
     echo '<div class="wrap">';
-    echo '<h2>'.__('Socialice settings', 'socialize-menu').'</h2>';
+    echo '<h2>'.__('Socialice settings', 'socialice-menu').'</h2>';
     ?>
-<form name="form1" method="post" action="">
-    <input type="hidden" name="<?php echo $hidden_field_name; ?>" value="Y">
+    <form name="form1" method="post" action="">
+        <input type="hidden" name="<?php echo $hidden_field_name; ?>" value="Y">
 
-    <p><?php _e("Facebook url:", 'socialize-menu' ); ?>
-        <input type="text" name="<?php echo $data_field_facebook; ?>" value="<?php echo $opt_val_facebook; ?>" size="20">
-    </p>
-    <p><?php _e("Twitter url:", 'socialize-menu' ); ?>
-        <input type="text" name="<?php echo $data_field_twitter; ?>" value="<?php echo $opt_val_twitter; ?>" size="20">
-    </p>
-    <p><?php _e("Google+ url:", 'socialize-menu' ); ?>
-        <input type="text" name="<?php echo $data_field_google; ?>" value="<?php echo $opt_val_google; ?>" size="20">
-    </p>
-
-    <p><?php _e("Open in new window?:", 'socialize-menu' ); ?>
-        <input type="checkbox" name="<?php echo $data_field_blank; ?>" value="yes" <?php if ($opt_val_blank=='yes') { echo 'checked'; } ?>> Yes
-    </p>
-    <hr />
-    <p class="submit">
-        <input type="submit" name="Submit" class="button-primary" value="<?php esc_attr_e('Save Changes') ?>" />
-    </p>
-    <p class="error">
-        <?php echo $formerror; ?>
-    </p>
-</form>
-</div>
+        <p><?php _e("Facebook url:", 'socialice-menu' ); ?>
+            <input type="text" name="<?php echo $data_field_facebook; ?>" value="<?php echo $opt_val_facebook; ?>" size="20">
+        </p>
+        <p><?php _e("Twitter url:", 'socialice-menu' ); ?>
+            <input type="text" name="<?php echo $data_field_twitter; ?>" value="<?php echo $opt_val_twitter; ?>" size="20">
+        </p>
+        <p><?php _e("Google+ url:", 'socialice-menu' ); ?>
+            <input type="text" name="<?php echo $data_field_google; ?>" value="<?php echo $opt_val_google; ?>" size="20">
+        </p>
+        <p><?php _e("Size:", 'socialice-menu'); ?>
+            <input type="radio" name="<?php echo $data_field_size; ?>" value="32" <?php if ($opt_val_size == '32') { echo 'checked'; } ?>>32px
+            <input type="radio" name="<?php echo $data_field_size; ?>" value="64" <?php if ($opt_val_size == '64') { echo 'checked'; } ?>>64px
+        </p>
+        <p><?php _e("Open in new window?:", 'socialice-menu' ); ?>
+            <input type="checkbox" name="<?php echo $data_field_blank; ?>" value="yes" <?php if ($opt_val_blank=='yes') { echo 'checked'; } ?>> Yes
+        </p>
+        <hr />
+        <p class="submit">
+            <input type="submit" name="Submit" class="button-primary" value="<?php esc_attr_e('Save Changes') ?>" />
+        </p>
+        <p class="error">
+            <?php echo $formerror; ?>
+        </p>
+    </form>
+    </div>
 
 <?php
 }
@@ -142,25 +145,25 @@ function your_widget_display($args) {
     if (get_option('socialice_facebook')) {
         echo '<a href="'.get_option('socialice_facebook').'"';
         if (get_option('socialice_blank')=='yes') { echo 'target="_blank"'; }
-        echo '><img src="'.plugins_url().'/'.plugin_basename(__DIR__).'/img/32px/facebook.png" class="socialice" /></a>';
+        echo '><img src="'.plugins_url().'/'.plugin_basename(__DIR__).'/img/'.get_option('socialice_size').'px/facebook.png" class="socialice" /></a>';
     }
     if (get_option('socialice_twitter')) {
         echo '<a href="'.get_option('socialice_twitter').'"';
         if (get_option('socialice_blank')=='yes') { echo 'target="_blank"'; }
-        echo '><img src="'.plugins_url().'/'.plugin_basename(__DIR__).'/img/32px/twitter.png" class="socialice" /></a>';
+        echo '><img src="'.plugins_url().'/'.plugin_basename(__DIR__).'/img/'.get_option('socialice_size').'px/twitter.png" class="socialice" /></a>';
     }
     if (get_option('socialice_google')) {
         echo '<a href="'.get_option('socialice_google').'"';
         if (get_option('socialice_blank')=='yes') { echo 'target="_blank"'; }
-        echo '><img src="'.plugins_url().'/'.plugin_basename(__DIR__).'/img/32px/google.png" class="socialice" /></a>';
+        echo '><img src="'.plugins_url().'/'.plugin_basename(__DIR__).'/img/'.get_option('socialice_size').'px/google.png" class="socialice" /></a>';
     }
     ?>
     <style type="text/css">
-    .socialice {
-        margin-right: 5px;
-    }
+        .socialice {
+            margin-right: 5px;
+        }
     </style>
-<?php
+    <?php
     echo $after_widget;
 }
 

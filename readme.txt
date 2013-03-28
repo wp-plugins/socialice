@@ -24,11 +24,7 @@ Socialice is a sidebarwidget that displays several social media icons. Visitors 
 
 = What social media can I use this for? =
 
-Currently the widget supports links to your:
-* Facebook
-* Twitter
-* Google+
-
+Currently the widget supports links to your Facebook, Twitter and Google+
 This will be expanded soon.
 
 == Screenshots ==
@@ -37,6 +33,9 @@ This will be expanded soon.
 2. 
 
 == Changelog ==
+= 0.2.0 =
+* Added 64px icons.
+
 = 0.1.1 =
 * Changed map structure.
 
